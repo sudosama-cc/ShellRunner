@@ -8,17 +8,17 @@ ShellRunner was developed to streamline and automate repetitive command-line tas
 
 This tool is particularly useful for:
 
-    Cybersecurity Professionals / Penetration Testers: For automating reconnaissance steps (e.g., nmap scans, dirb enumeration), post-exploitation activities, or setting up test environments.
+Cybersecurity Professionals / Penetration Testers: For automating reconnaissance steps (e.g., nmap scans, dirb enumeration), post-exploitation activities, or setting up test environments.
 
-    System Administrators / DevOps Engineers: To automate routine server maintenance, deployment scripts, log analysis, or repetitive configuration tasks across multiple systems.
+System Administrators / DevOps Engineers: To automate routine server maintenance, deployment scripts, log analysis, or repetitive configuration tasks across multiple systems.
 
-    Developers: For automating build processes, running multiple test suites, setting up development environments, or managing project dependencies.
+Developers: For automating build processes, running multiple test suites, setting up development environments, or managing project dependencies.
 
-    Researchers / Data Scientists: To automate data collection, pre-processing steps, or running sequential analysis scripts.
+Researchers / Data Scientists: To automate data collection, pre-processing steps, or running sequential analysis scripts.
 
-    Anyone needing to automate command-line workflows: If you find yourself repeatedly typing the same sequence of commands into a terminal, ShellRunner can save you significant time and reduce manual errors.
+Anyone needing to automate command-line workflows: If you find yourself repeatedly typing the same sequence of commands into a terminal, ShellRunner can save you significant time and reduce manual errors.
 
-    ShellRunner aims to provide a reliable, transparent, and easy-to-use solution for automating command execution, complete with detailed historical reports for review and auditing.
+ShellRunner aims to provide a reliable, transparent, and easy-to-use solution for automating command execution, complete with detailed historical reports for review and auditing.
 
 ## Installation
 
