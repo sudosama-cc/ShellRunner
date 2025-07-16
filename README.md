@@ -18,8 +18,8 @@ To set up and run ShellRunner on your local system, follow these steps:
 
 After launching the application:
 
-1.  **Add Tasks:** Click the "Add Task" button to define new tasks (task name, command, description).
-2![ShellRunner](https://imgur.com/a/zd2dMf2)
+1.  **Add Tasks:** Click the "Add Task" button to define new tasks (task name, command, description)
+2.  ![ShellRunner](https://i.imgur.com/Rw2fNgm.png)
 3.  **Manage Tasks:** Select existing tasks to "Edit Task" or "Delete Task".
 4.  **Start Automation:** Click the "Start All Tasks" button to begin executing all tasks in the list sequentially.
 5.  **Stop Automation:** Use the "Stop Current Task" button to halt the currently running task.
@@ -28,3 +28,9 @@ After launching the application:
 ---
 
 ## File Structure
+
+├── db/                       # SQLite database files are stored here (shellrunner.db)
+├── reports/                  # Automatically generated HTML reports are stored here
+├── shellrunner.py            # The main application code
+├── requirements.txt          # Lists project dependencies
+└── README.md                 # This file
