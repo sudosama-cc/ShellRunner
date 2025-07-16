@@ -29,20 +29,9 @@ The Application screen will open
 After launching the application:
 
 1.  **Add Tasks:** Click the "Add Task" button to define new tasks (task name, command, description)
-2.  
-3.  ![ShellRunner](https://i.imgur.com/rSZi2eH.png)
-4.  
+2.  ![ShellRunner](https://i.imgur.com/rSZi2eH.png)
+  
 5.  **Manage Tasks:** Select existing tasks to "Edit Task" or "Delete Task".
 6.  **Start Automation:** Click the "Start All Tasks" button to begin executing all tasks in the list sequentially.
 7.  **Stop Automation:** Use the "Stop Current Task" button to halt the currently running task.
 8.  **Generate Report:** After all tasks are complete, or at any time you wish, click the "Generate HTML Report" button to create a detailed HTML report. The report will be automatically saved to the `reports/` directory and opened.
-
----
-
-## File Structure
-
-├── db/                       # SQLite database files are stored here (shellrunner.db)
-├── reports/                  # Automatically generated HTML reports are stored here
-├── shellrunner.py            # The main application code
-├── requirements.txt          # Lists project dependencies
-└── README.md                 # This file
