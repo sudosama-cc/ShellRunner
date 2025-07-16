@@ -8,13 +8,9 @@ To set up and run ShellRunner on your local system, follow these steps:
 
     ```bash
     git clone [https://github.com/sudosama-cc/ShellRunner.git](https://github.com/sudosama-cc/ShellRunner.git)
-    ```
 
-    ```bash
     cd ShellRunner
-    ```
     
-    ```bash
     pip install -r requirements.txt
     ```
 
