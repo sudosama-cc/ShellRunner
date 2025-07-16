@@ -19,7 +19,7 @@ To set up and run ShellRunner on your local system, follow these steps:
 After launching the application:
 
 1.  **Add Tasks:** Click the "Add Task" button to define new tasks (task name, command, description).
-2.  ![ShellRunner]([https://imgur.com/a/zd2dMf2])
+2.  ![ShellRunner](https://imgur.com/a/zd2dMf2)
 
 3.  **Manage Tasks:** Select existing tasks to "Edit Task" or "Delete Task".
 4.  **Start Automation:** Click the "Start All Tasks" button to begin executing all tasks in the list sequentially.
