@@ -22,7 +22,7 @@ Start the application
 python3 ShellRunner.py
 ```
 
-The Application screen will open
+The application screen will open
 
 ![ShellRunner](https://i.imgur.com/Rw2fNgm.png)
 
@@ -36,8 +36,8 @@ For example, I automated the Fuzzing process by adding the tools in the image.
 
 ![ShellRunner](https://i.imgur.com/f4DMDMn.png)
 
-  
-5.  **Manage Tasks:** Select existing tasks to "Edit Task" or "Delete Task".
-6.  **Start Automation:** Click the "Start All Tasks" button to begin executing all tasks in the list sequentially.
-7.  **Stop Automation:** Use the "Stop Current Task" button to halt the currently running task.
-8.  **Generate Report:** After all tasks are complete, or at any time you wish, click the "Generate HTML Report" button to create a detailed HTML report. The report will be automatically saved to the `reports/` directory and opened.
+**Start Automation:** Click the "Start All Tasks" button to begin executing all tasks in the list sequentially.
+
+![ShellRunner](https://i.imgur.com/hwlZiIh.png)
+
+**Generate Report:** After all tasks are complete, or at any time you wish, click the "Generate HTML Report" button to create a detailed HTML report. The report will be automatically saved to the `reports/` directory and opened.
