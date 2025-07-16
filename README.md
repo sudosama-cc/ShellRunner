@@ -25,11 +25,11 @@ ShellRunner aims to provide a reliable, transparent, and easy-to-use solution fo
 To set up and run ShellRunner on your local system, follow these steps:
 
  ```bash
-    git clone https://github.com/sudosama-cc/ShellRunner.git
+git clone https://github.com/sudosama-cc/ShellRunner.git
 
-    cd ShellRunner
+cd ShellRunner
     
-    pip install -r requirements.txt
+pip install -r requirements.txt
  ```
 
 ## Usage
