@@ -9,7 +9,6 @@ To set up and run ShellRunner on your local system, follow these steps:
 1.  **Clone the Repository:**
     ```bash
     git clone [https://github.com/sudosama-cc/ShellRunner.git](https://github.com/sudosama-cc/ShellRunner.git)
-    cd ShellRunner
     ```
 
     ```bash
