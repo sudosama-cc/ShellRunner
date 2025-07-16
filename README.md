@@ -6,7 +6,6 @@ ShellRunner is a modern and user-friendly GUI application designed to automate m
 
 To set up and run ShellRunner on your local system, follow these steps:
 
-1.  **Clone the Repository:**
     ```bash
     git clone [https://github.com/sudosama-cc/ShellRunner.git](https://github.com/sudosama-cc/ShellRunner.git)
     ```
@@ -15,12 +14,9 @@ To set up and run ShellRunner on your local system, follow these steps:
     cd ShellRunner
     ```
     
-2.  **Install Dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
-
----
 
 ## Usage
 
