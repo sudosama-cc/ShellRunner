@@ -61,3 +61,7 @@ For example, I automated the Fuzzing process by adding the tools in the image.
 **Generate Report:** After all tasks are complete, or at any time you wish, click the "Generate HTML Report" button to create a detailed HTML report. The report will be automatically saved to the `reports/`  directory and opened.
 
 ![ShellRunner](https://i.imgur.com/JzM0QcR.png)
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
