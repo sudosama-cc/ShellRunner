@@ -2,6 +2,24 @@
 
 ShellRunner is a modern and user-friendly GUI application designed to automate multiple shell commands sequentially. Easily manage your tasks, monitor outputs in real-time, and automatically generate detailed HTML reports of all your operations.
 
+# Purpose of ShellRunner & Target Audience
+
+ShellRunner was developed to streamline and automate repetitive command-line tasks that are often part of larger workflows. Instead of manually executing commands one by one, users can define a sequence of tasks, run them efficiently, and maintain a clear record of the entire process.
+
+This tool is particularly useful for:
+
+    Cybersecurity Professionals / Penetration Testers: For automating reconnaissance steps (e.g., nmap scans, dirb enumeration), post-exploitation activities, or setting up test environments.
+
+    System Administrators / DevOps Engineers: To automate routine server maintenance, deployment scripts, log analysis, or repetitive configuration tasks across multiple systems.
+
+    Developers: For automating build processes, running multiple test suites, setting up development environments, or managing project dependencies.
+
+    Researchers / Data Scientists: To automate data collection, pre-processing steps, or running sequential analysis scripts.
+
+    Anyone needing to automate command-line workflows: If you find yourself repeatedly typing the same sequence of commands into a terminal, ShellRunner can save you significant time and reduce manual errors.
+
+    ShellRunner aims to provide a reliable, transparent, and easy-to-use solution for automating command execution, complete with detailed historical reports for review and auditing.
+
 ## Installation
 
 To set up and run ShellRunner on your local system, follow these steps:
