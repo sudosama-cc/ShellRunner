@@ -28,8 +28,14 @@ The Application screen will open
 
 After launching the application:
 
-1.  **Add Tasks:** Click the "Add Task" button to define new tasks (task name, command, description)
-2.  ![ShellRunner](https://i.imgur.com/rSZi2eH.png)
+**Add Tasks:** Click the "Add Task" button to define new tasks (task name, command, description)
+
+![ShellRunner](https://i.imgur.com/rSZi2eH.png)
+
+For example, I automated the Fuzzing process by adding the tools in the image.
+
+![ShellRunner](https://i.imgur.com/f4DMDMn.png)
+
   
 5.  **Manage Tasks:** Select existing tasks to "Edit Task" or "Delete Task".
 6.  **Start Automation:** Click the "Start All Tasks" button to begin executing all tasks in the list sequentially.
