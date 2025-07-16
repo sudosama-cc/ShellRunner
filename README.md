@@ -16,14 +16,26 @@ To set up and run ShellRunner on your local system, follow these steps:
 
 ## Usage
 
+Start the application
+
+```bash
+python3 ShellRunner.py
+```
+
+The Application screen will open
+
+![ShellRunner](https://i.imgur.com/Rw2fNgm.png)
+
 After launching the application:
 
 1.  **Add Tasks:** Click the "Add Task" button to define new tasks (task name, command, description)
-2.  ![ShellRunner](https://i.imgur.com/Rw2fNgm.png)
-3.  **Manage Tasks:** Select existing tasks to "Edit Task" or "Delete Task".
-4.  **Start Automation:** Click the "Start All Tasks" button to begin executing all tasks in the list sequentially.
-5.  **Stop Automation:** Use the "Stop Current Task" button to halt the currently running task.
-6.  **Generate Report:** After all tasks are complete, or at any time you wish, click the "Generate HTML Report" button to create a detailed HTML report. The report will be automatically saved to the `reports/` directory and opened.
+2.  
+3.  ![ShellRunner](https://i.imgur.com/rSZi2eH.png)
+4.  
+5.  **Manage Tasks:** Select existing tasks to "Edit Task" or "Delete Task".
+6.  **Start Automation:** Click the "Start All Tasks" button to begin executing all tasks in the list sequentially.
+7.  **Stop Automation:** Use the "Stop Current Task" button to halt the currently running task.
+8.  **Generate Report:** After all tasks are complete, or at any time you wish, click the "Generate HTML Report" button to create a detailed HTML report. The report will be automatically saved to the `reports/` directory and opened.
 
 ---
 
