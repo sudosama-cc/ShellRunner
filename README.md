@@ -62,9 +62,9 @@ For example, I automated the Fuzzing process by adding the tools in the image.
 
 ![ShellRunner](https://i.imgur.com/JzM0QcR.png)
 
-## Update
+## Update (22.07.2025)
 
-GUI Background color and terminal background & output color have been changed.
+The background color of the GUI, as well as the terminal background and output colors, have been updated.
 
 ![ShellRunner](https://i.imgur.com/o1Tph2H.png)
 
