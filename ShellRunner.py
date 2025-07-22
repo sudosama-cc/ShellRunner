@@ -125,7 +125,7 @@ class CommandRunner(QThread):
         try:
             first_cmd_part = self.command.split()[0]
             if not any(os.access(os.path.join(path, first_cmd_part), os.X_OK) for path in os.environ.get("PATH", "").split(os.pathsep)):
-                 if not os.path.exists(first_cmd_part) or not os.access(first_cmd_part, os.X_OK):
+                if not os.path.exists(first_cmd_part) or not os.access(first_cmd_part, os.X_OK):
                     raise FileNotFoundError(f"Command '{first_cmd_part}' not found or not executable.")
 
             self.process = subprocess.Popen(
@@ -222,21 +222,39 @@ class NewTaskDialog(QDialog):
         self.init_ui()
 
     def init_ui(self):
+        self.setStyleSheet("background-color: white;")
+
         layout = QFormLayout()
 
+
+        input_style = "background-color: white; color: black; border: 1px solid black;"
+
         self.task_name_input = QLineEdit()
-        self.task_name_input.setPlaceholderText("")
+        self.task_name_input.setPlaceholderText("Enter task name")
+        self.task_name_input.setStyleSheet(input_style)
         
         self.task_command_input = QLineEdit()
-        self.task_command_input.setPlaceholderText("")
+        self.task_command_input.setPlaceholderText("Enter command to execute")
+        self.task_command_input.setStyleSheet(input_style)
         
         self.task_description_input = QTextEdit()
-        self.task_description_input.setPlaceholderText("")
+        self.task_description_input.setPlaceholderText("Enter task description (optional)")
         self.task_description_input.setFixedHeight(80)
+        self.task_description_input.setStyleSheet(input_style)
 
-        layout.addRow("Task Name:", self.task_name_input)
-        layout.addRow("Command:", self.task_command_input)
-        layout.addRow("Description:", self.task_description_input)
+        label_style = "color: black;"
+        
+        task_name_label = QLabel("Task Name:")
+        task_name_label.setStyleSheet(label_style)
+        layout.addRow(task_name_label, self.task_name_input)
+        
+        command_label = QLabel("Command:")
+        command_label.setStyleSheet(label_style)
+        layout.addRow(command_label, self.task_command_input)
+        
+        description_label = QLabel("Description:")
+        description_label.setStyleSheet(label_style)
+        layout.addRow(description_label, self.task_description_input)
 
         if self.task:
             self.task_name_input.setText(self.task.name)
@@ -244,13 +262,15 @@ class NewTaskDialog(QDialog):
             self.task_description_input.setText(self.task.description)
 
         buttons_layout = QHBoxLayout()
+        button_style = "QPushButton { background-color: white; color: black; padding: 8px; border: 1px solid black; border-radius: 5px; } QPushButton:hover { background-color: #f0f0f0; }"
+
         save_button = QPushButton("Save")
         save_button.clicked.connect(self.validate_and_accept)
-        save_button.setStyleSheet("QPushButton { background-color: #2196F3; color: white; padding: 8px; border-radius: 5px; } QPushButton:hover { background-color: #1976D2; }")
+        save_button.setStyleSheet(button_style)
         
         cancel_button = QPushButton("Cancel")
         cancel_button.clicked.connect(self.reject)
-        cancel_button.setStyleSheet("QPushButton { background-color: #2196F3; color: white; padding: 8px; border-radius: 5px; } QPushButton:hover { background-color: #1976D2; }")
+        cancel_button.setStyleSheet(button_style)
 
         buttons_layout.addStretch(1)
         buttons_layout.addWidget(save_button)
@@ -298,6 +318,8 @@ class ShellRunnerApp(QWidget):
         self.setWindowTitle("ShellRunner - Command Automation Tool")
         self.setGeometry(100, 100, 1200, 800)
 
+        self.setStyleSheet("background-color: white;")
+
         main_layout = QVBoxLayout()
 
         main_layout.addSpacing(15)
@@ -305,33 +327,35 @@ class ShellRunnerApp(QWidget):
         tasks_and_output_section = QHBoxLayout()
 
         tasks_column_layout = QVBoxLayout()
+        label_style = "color: black;"
         tasks_column_layout.addWidget(QLabel("<h2>Task List</h2>"))
+        tasks_column_layout.itemAt(0).widget().setStyleSheet(label_style)
         
         self.task_list_widget = QListWidget()
         self.task_list_widget.setSelectionMode(QListWidget.SingleSelection)
         self.task_list_widget.setFont(QFont("Arial", 10))
+        self.task_list_widget.setStyleSheet("background-color: white; border: 1px solid black; color: black;")
         tasks_column_layout.addWidget(self.task_list_widget)
 
         task_buttons_layout = QHBoxLayout()
-        blue_button_style = "QPushButton { background-color: #2196F3; color: white; padding: 8px; border-radius: 5px; } QPushButton:hover { background-color: #1976D2; } QPushButton:disabled { background-color: #a0a0a0; }"
-        red_button_style = "QPushButton { background-color: #F44336; color: white; padding: 8px; border-radius: 5px; } QPushButton:hover { background-color: #D32F2F; } QPushButton:disabled { background-color: #a0a0a0; }"
-
+        button_style = "QPushButton { background-color: white; color: black; padding: 8px; border: 1px solid black; border-radius: 5px; } QPushButton:hover { background-color: #f0f0f0; } QPushButton:disabled { background-color: #e0e0e0; color: #a0a0a0; border: 1px solid #a0a0a0; }"
+        
         self.add_task_button = QPushButton("Add Task")
         self.add_task_button.clicked.connect(self.add_task)
         self.add_task_button.setFont(QFont("Arial", 10))
-        self.add_task_button.setStyleSheet(blue_button_style)
+        self.add_task_button.setStyleSheet(button_style)
         
         self.edit_task_button = QPushButton("Edit Task")
         self.edit_task_button.clicked.connect(self.edit_task)
         self.edit_task_button.setEnabled(False)
         self.edit_task_button.setFont(QFont("Arial", 10))
-        self.edit_task_button.setStyleSheet(blue_button_style)
+        self.edit_task_button.setStyleSheet(button_style)
         
         self.delete_task_button = QPushButton("Delete Task")
         self.delete_task_button.clicked.connect(self.delete_task)
         self.delete_task_button.setEnabled(False)
         self.delete_task_button.setFont(QFont("Arial", 10))
-        self.delete_task_button.setStyleSheet(red_button_style)
+        self.delete_task_button.setStyleSheet(button_style)
         
         task_buttons_layout.addWidget(self.add_task_button)
         task_buttons_layout.addWidget(self.edit_task_button)
@@ -344,9 +368,11 @@ class ShellRunnerApp(QWidget):
 
         output_column_layout = QVBoxLayout()
         output_column_layout.addWidget(QLabel("<h2>Command Output</h2>"))
+        output_column_layout.itemAt(0).widget().setStyleSheet(label_style)
+
         self.output_text_edit = QTextEdit()
         self.output_text_edit.setReadOnly(True)
-        self.output_text_edit.setStyleSheet("background-color: #1e1e1e; color: #d4d4d4; font-family: monospace; font-size: 10pt;")
+        self.output_text_edit.setStyleSheet("background-color: black; color: #00FF00; font-family: monospace; font-size: 10pt;")
         self.output_text_edit.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         output_column_layout.addWidget(self.output_text_edit)
         
@@ -356,21 +382,23 @@ class ShellRunnerApp(QWidget):
         main_layout.addLayout(tasks_and_output_section)
 
         action_buttons_layout = QHBoxLayout()
+        action_button_style = "QPushButton { background-color: white; color: black; padding: 10px 20px; border: 1px solid black; border-radius: 5px; } QPushButton:hover { background-color: #f0f0f0; } QPushButton:disabled { background-color: #e0e0e0; color: #a0a0a0; border: 1px solid #a0a0a0; }"
+
         self.start_button = QPushButton("Start All Tasks")
         self.start_button.clicked.connect(self.start_all_tasks)
         self.start_button.setFont(QFont("Arial", 11, QFont.Bold))
-        self.start_button.setStyleSheet(blue_button_style.replace("padding: 8px", "padding: 10px 20px"))
+        self.start_button.setStyleSheet(action_button_style)
         
         self.stop_button = QPushButton("Stop Current Task")
         self.stop_button.clicked.connect(self.stop_current_task)
         self.stop_button.setEnabled(False)
         self.stop_button.setFont(QFont("Arial", 11, QFont.Bold))
-        self.stop_button.setStyleSheet(blue_button_style.replace("padding: 8px", "padding: 10px 20px"))
+        self.stop_button.setStyleSheet(action_button_style)
 
         self.report_button = QPushButton("Generate HTML Report")
         self.report_button.clicked.connect(self.generate_html_report)
         self.report_button.setFont(QFont("Arial", 11, QFont.Bold))
-        self.report_button.setStyleSheet(blue_button_style.replace("padding: 8px", "padding: 10px 20px"))
+        self.report_button.setStyleSheet(action_button_style)
 
         action_buttons_layout.addStretch(1)
         action_buttons_layout.addWidget(self.start_button)
@@ -426,7 +454,7 @@ class ShellRunnerApp(QWidget):
             task_to_edit.description = data["description"]
             
             self.db_manager.cursor.execute("UPDATE tasks SET name = ?, command = ?, description = ? WHERE id = ?",
-                                          (task_to_edit.name, task_to_edit.command, task_to_edit.description, task_to_edit.db_id))
+                                             (task_to_edit.name, task_to_edit.command, task_to_edit.description, task_to_edit.db_id))
             self.db_manager.conn.commit()
             self.update_task_list_widget()
 
@@ -464,7 +492,7 @@ class ShellRunnerApp(QWidget):
             elif task.status == "Interrupted":
                 item.setForeground(QColor("#FF9800"))
             else:
-                item.setForeground(QColor("white"))
+                item.setForeground(QColor("black"))
 
             self.task_list_widget.addItem(item)
         self.update_task_buttons_state()
