@@ -62,6 +62,12 @@ For example, I automated the Fuzzing process by adding the tools in the image.
 
 ![ShellRunner](https://i.imgur.com/JzM0QcR.png)
 
+## Update
+
+GUI Background color and terminal background & output color have been changed.
+
+![ShellRunner](https://i.imgur.com/o1Tph2H.png)
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
